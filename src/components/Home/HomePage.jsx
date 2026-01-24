@@ -56,7 +56,7 @@ const HomePage = () => {
             <div className="card shadow-sm mb-4">
                 <div className="card-body">
                     <h5 className="card-title mb-2">資料來源</h5>
-                    <p className="mb-0 text-muted">包含說明文字...</p>
+                    <p className="mb-0 text-muted">請各位檢視一下自己的資料是否須更新，若要更新請點擊【修改】按鈕進行更新。若遇無法更新情形請進以下網址進入Excel表找到自己的欄位更新資料 　～感恩的心～</p>
                     <small className="text-muted">
                         <a href={`https://docs.google.com/spreadsheets/d/${DEFAULT_SHEET_ID}/edit?gid=${DEFAULT_GID}#gid=${DEFAULT_GID}`}
                             target="_blank" rel="noopener noreferrer">
