@@ -86,54 +86,55 @@ const EditModal = ({ initialData, isNew, onClose, onSaved }) => {
   };
 
   return (
-    <div className="modal fade show" style={{ display: 'block', backgroundColor: 'rgba(0,0,0,0.5)' }} tabIndex="-1">
-      <div className="modal-dialog">
-        <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title">{isNew ? '新增角色' : '修改資料'}</h5>
-            <button type="button" className="btn-close" onClick={onClose}></button>
+    <div style={{
+      position: 'fixed', inset: 0, background: 'rgba(0,0,0,.4)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 9999
+    }}>
+      <div style={{
+        background: '#fff', borderRadius: '12px', padding: '18px', width: 'min(520px, 92vw)',
+        boxShadow: '0 10px 30px rgba(0,0,0,.2)', color: '#222', fontFamily: 'system-ui,-apple-system,BlinkMacSystemFont'
+      }}>
+        <h3 style={{ margin: '0 0 12px', fontSize: '18px' }}>{isNew ? '新增角色' : '修改資料'}</h3>
+
+        <div className="row g-3">
+          <div className="col-6">
+            <label className="form-label">角色名稱（B）</label>
+            <input id="name" type="text" className="form-control" value={formData.name || ''} onChange={handleChange} />
           </div>
-          <div className="modal-body">
-            <div className="row g-3">
-              <div className="col-6">
-                <label className="form-label">角色名稱（B）</label>
-                <input id="name" type="text" className="form-control" value={formData.name || ''} onChange={handleChange} />
-              </div>
-              <div className="col-6">
-                <label className="form-label">角色代碼（C）</label>
-                <input id="code" type="text" className="form-control" value={formData.code || ''} onChange={handleChange} />
-              </div>
-              <div className="col-6">
-                <label className="form-label">角色職業（D）</label>
-                <input id="job" type="text" className="form-control" value={formData.job || ''} onChange={handleChange} />
-              </div>
-              <div className="col-6">
-                <label className="form-label">角色等級（E）</label>
-                <input id="level" type="text" className="form-control" value={formData.level || ''} onChange={handleChange} />
-              </div>
-              <div className="col-6">
-                <label className="form-label">角色乾表（F）</label>
-                <input id="attack" type="text" className="form-control" value={formData.attack || ''} onChange={handleChange} />
-              </div>
-              <div className="col-12">
-                <label className="form-label">所在營區（G）</label>
-                <select id="camp" className="form-select" value={formData.camp || ''} onChange={handleChange}>
-                  <option value="">（請選擇）</option>
-                  <option>拉圖一營</option><option>拉圖二營</option><option>拉圖三營</option><option>拉圖四營</option><option>拉圖五營</option>
-                  <option>拉圖六營</option><option>拉圖七營</option><option>拉圖八營</option><option>拉圖九營</option><option>拉圖十營</option>
-                  <option>炎魔一營</option><option>炎魔二營</option><option>炎魔三營</option><option>炎魔四營</option><option>炎魔五營</option>
-                  <option>炎魔六營</option><option>炎魔七營</option><option>炎魔八營</option><option>炎魔九營</option><option>炎魔十營</option>
-                  <option>訓練營</option><option>外援大大</option>
-                </select>
-              </div>
-            </div>
+          <div className="col-6">
+            <label className="form-label">角色代碼（C）</label>
+            <input id="code" type="text" className="form-control" value={formData.code || ''} onChange={handleChange} />
           </div>
-          <div className="modal-footer">
-            <button className="btn btn-secondary" onClick={onClose} disabled={saving}>取消</button>
-            <button className="btn btn-primary" onClick={handleSave} disabled={saving}>
-              {saving ? '儲存中...' : '儲存'}
-            </button>
+          <div className="col-6">
+            <label className="form-label">角色職業（D）</label>
+            <input id="job" type="text" className="form-control" value={formData.job || ''} onChange={handleChange} />
           </div>
+          <div className="col-6">
+            <label className="form-label">角色等級（E）</label>
+            <input id="level" type="text" className="form-control" value={formData.level || ''} onChange={handleChange} />
+          </div>
+          <div className="col-6">
+            <label className="form-label">角色乾表（F）</label>
+            <input id="attack" type="text" className="form-control" value={formData.attack || ''} onChange={handleChange} />
+          </div>
+          <div className="col-6">
+            <label className="form-label">所在營區（G）</label>
+            <select id="camp" className="form-select" value={formData.camp || ''} onChange={handleChange}>
+              <option value="">（請選擇）</option>
+              <option>拉圖一營</option><option>拉圖二營</option><option>拉圖三營</option><option>拉圖四營</option><option>拉圖五營</option>
+              <option>拉圖六營</option><option>拉圖七營</option><option>拉圖八營</option><option>拉圖九營</option><option>拉圖十營</option>
+              <option>炎魔一營</option><option>炎魔二營</option><option>炎魔三營</option><option>炎魔四營</option><option>炎魔五營</option>
+              <option>炎魔六營</option><option>炎魔七營</option><option>炎魔八營</option><option>炎魔九營</option><option>炎魔十營</option>
+              <option>訓練營</option><option>外援大大</option>
+            </select>
+          </div>
+        </div>
+
+        <div className="d-flex gap-2 justify-content-end mt-3">
+          <button className="btn btn-light border" onClick={onClose} disabled={saving}>取消</button>
+          <button className="btn btn-primary" onClick={handleSave} disabled={saving}>
+            {saving ? '儲存中...' : '儲存'}
+          </button>
         </div>
       </div>
     </div>

@@ -96,7 +96,7 @@ const CharacterTable = ({ data, currentTab, loading, onEdit }) => {
                   <td>{r.camp}</td>
                   <td>
                     <button
-                      className="btn btn-outline-secondary btn-sm"
+                      className="btn btn-outline-secondary"
                       onClick={() => onEdit(r)}
                     >
                       修改
