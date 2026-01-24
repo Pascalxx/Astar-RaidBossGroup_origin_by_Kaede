@@ -75,6 +75,7 @@ const EditModal = ({ initialData, isNew, onClose, onSaved }) => {
 
       alert(isNew ? '新增成功！' : '更新成功！');
       onSaved(updated);
+      onClose();
     } catch (e) {
       console.error(e);
       alert('送出失敗：' + e.message + '\n(若為 CORS 錯誤請忽略並重新整理確認)');
