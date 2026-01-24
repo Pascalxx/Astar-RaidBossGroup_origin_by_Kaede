@@ -1,0 +1,46 @@
+/* 基本重置，引入 Bootstrap 後通常不需要太多額外樣式，保留此檔以備不時之需 */
+
+/* Custom Tab Styles */
+.nav-tabs-custom .nav-link {
+  border: 2px solid transparent;
+  font-weight: 600;
+  margin-right: .5rem;
+  cursor: pointer;
+}
+
+.nav-tabs-custom .nav-link:hover {
+  opacity: .9;
+}
+
+/* 拉圖斯（藍） */
+.nav-tabs-custom .tab-latus {
+  color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.nav-tabs-custom .tab-latus.active {
+  color: #fff;
+  background: #0d6efd;
+}
+
+/* 殘暴炎魔（橘） */
+.nav-tabs-custom .tab-zakum {
+  color: #fd7e14;
+  border-color: #fd7e14;
+}
+
+.nav-tabs-custom .tab-zakum.active {
+  color: #fff;
+  background: #fd7e14;
+}
+
+/* 訓練營&外援（黑） */
+.nav-tabs-custom .tab-misc {
+  color: #212529;
+  border-color: #212529;
+}
+
+.nav-tabs-custom .tab-misc.active {
+  color: #fff;
+  background: #212529;
+}
