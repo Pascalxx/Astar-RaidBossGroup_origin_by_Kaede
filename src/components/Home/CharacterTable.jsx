@@ -22,13 +22,15 @@ const CharacterTable = ({ data, currentTab, loading, onEdit }) => {
   }
 
   const zhNums = '一二三四五六七八九十';
-  const reLatus = new RegExp(`^拉圖[${zhNums}]營$`);
+  const reLatus = new RegExp(`^普拉[${zhNums}]營$`);
+  const reLatusHard = new RegExp(`^困拉[${zhNums}]營$`);
   const reZakum = new RegExp(`^炎魔[${zhNums}]營$`);
 
   // 過濾資料
   const filtered = data.filter(r => {
     const camp = (r.camp || '').trim();
     if (currentTab === 'latus') return reLatus.test(camp);
+    if (currentTab === 'latushard') return reLatusHard.test(camp);
     if (currentTab === 'zakum') return reZakum.test(camp);
     if (currentTab === 'trainext') return (camp === '訓練營' || camp === '外援大大');
     return true;
@@ -55,25 +57,27 @@ const CharacterTable = ({ data, currentTab, loading, onEdit }) => {
   });
 
   const groupNotes = {
-    '拉圖一營': '🔰歐皇指定席🎗️',
-    '拉圖二營': '🔰瑞氣千條團💎',
-    '拉圖三營': '🔰馬到成功團🐎',
-    '拉圖四營': '🔰傳奇空殼團🥥',
-    '拉圖七營': '🔰非洲畢業班🗿',
+    '普拉一營': '🔰歐皇指定席🎗️',
+    '普拉二營': '🔰瑞氣千條團💎',
+    '普拉三營': '🔰馬到成功團🐎',
+    '普拉四營': '🔰傳奇空殼團🥥',
+    '普拉五營': '🔰祖宗保佑我⛩️',
+    '普拉六營': '🔰拉圖娛樂城🎰',
+    '普拉七營': '🔰非洲畢業班🗿',
   };
 
   return (
     <div className="table-responsive">
-      <table className="table table-striped table-hover align-middle">
+      <table className="table table-striped table-hover align-middle reset-content">
         <thead className="table-secondary">
           <tr>
-            <th>角色名稱</th>
-            <th>角色代碼</th>
-            <th>角色職業</th>
-            <th>角色等級</th>
-            <th>角色乾表</th>
-            <th>所在營區</th>
-            <th>修改資料</th>
+            <th style={{ width: '20%' }}>角色名稱</th>
+            <th style={{ width: '10%' }}>角色代碼</th>
+            <th style={{ width: '20%' }}>角色職業</th>
+            <th style={{ width: '10%' }}>角色等級</th>
+            <th style={{ width: '10%' }}>角色乾表</th>
+            <th style={{ width: '20%' }}>所在營區</th>
+            <th style={{ width: '10%' }}>修改資料</th>
           </tr>
         </thead>
         <tbody>

@@ -52,10 +52,16 @@ const HomePage = () => {
 
   return (
     <div className="container py-4">
+      <div className="d-flex align-items-center justify-content-between mb-2">
+        <h3 className="mb-0"><b>👩‍👩‍👧‍👦 公會小夥伴</b></h3>
+      </div>
+
       {/* 資訊卡片 */}
       <div className="card shadow-sm mb-4">
         <div className="card-body">
-          <h5 className="card-title mb-2">資料來源</h5>
+          <div className="d-flex justify-content-between align-items-center mb-0">
+            <h4 className="card-title mb-2">➡️ 資料來源</h4>
+          </div>
           <p className="mb-0 text-muted">請各位檢視一下自己的資料是否須更新，若要更新請點擊【修改】按鈕進行更新。若遇無法更新情形請進以下網址進入Excel表找到自己的欄位更新資料 　～感恩的心～</p>
           <small className="text-muted">
             <a href={`https://docs.google.com/spreadsheets/d/${DEFAULT_SHEET_ID}/edit?gid=${DEFAULT_GID}#gid=${DEFAULT_GID}`}
@@ -71,7 +77,7 @@ const HomePage = () => {
       <div className="card shadow-sm">
         <div className="card-body">
           <div className="d-flex justify-content-between align-items-center mb-3">
-            <h5 className="card-title mb-0">角色清單</h5>
+            <h4 className="card-title mb-2">🏋️ 角色清單</h4>
             <div className="d-flex align-items-center gap-2">
               <button className="btn btn-primary btn-sm" onClick={handleAdd}>新增角色</button>
               <button className="btn btn-outline-primary btn-sm" onClick={() => setShowStats(true)}>📊 公會職業分佈統計</button>
@@ -85,7 +91,13 @@ const HomePage = () => {
               <button
                 className={`nav-link tab-latus ${currentTab === 'latus' ? 'active' : ''}`}
                 onClick={() => setCurrentTab('latus')}
-              >拉圖斯</button>
+              >拉圖斯(普通)</button>
+            </li>
+            <li className="nav-item">
+              <button
+                className={`nav-link tab-latushard ${currentTab === 'latushard' ? 'active' : ''}`}
+                onClick={() => setCurrentTab('latushard')}
+              >拉圖斯(困難)</button>
             </li>
             <li className="nav-item">
               <button
@@ -101,7 +113,7 @@ const HomePage = () => {
             </li>
           </ul>
 
-          {/* 列表 */}
+          {/* 角色列表表格 */}
           <CharacterTable
             data={data}
             currentTab={currentTab}

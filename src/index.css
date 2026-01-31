@@ -23,6 +23,17 @@
   background: #0d6efd;
 }
 
+/* 困難拉圖斯（紫） */
+.nav-tabs-custom .tab-latushard {
+  color: #6f42c1;
+  border-color: #6f42c1;
+}
+
+.nav-tabs-custom .tab-latushard.active {
+  color: #fff;
+  background: #6f42c1;
+}
+
 /* 殘暴炎魔（橘） */
 .nav-tabs-custom .tab-zakum {
   color: #fd7e14;
@@ -34,13 +45,96 @@
   background: #fd7e14;
 }
 
-/* 訓練營&外援（黑） */
+/* 訓練營&外援（綠） */
 .nav-tabs-custom .tab-misc {
-  color: #212529;
-  border-color: #212529;
+  color: #198754;
+  border-color: #198754;
 }
 
 .nav-tabs-custom .tab-misc.active {
   color: #fff;
-  background: #212529;
+  background: #198754;
+}
+
+/* 標題樣式 */
+.group-row {
+  background: rgba(0, 0, 0, .03) !important;
+  font-weight: 600;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.0rem;
+}
+
+/* 重置表格內容樣式 */
+.reset-content {
+  line-height: 1.5;
+  font-size: 1rem;
+  border: none;
+}
+
+
+
+/* 針對 GameGuide 表格：全部粗體 */
+.game-guide-table td {
+  font-weight: bold !important;
+}
+
+/* Game Guide 分頁按鈕樣式 - 對應 test2.html .tab_css label */
+.game-guide-tab-btn {
+  padding: 10px 16px !important;
+  margin: 0 5px 5px 0 !important;
+  border-radius: 5px;
+  /* 只有在 hover 或 active 時才是粗體，以符合 test2.html 的動態寬度行為 */
+}
+
+.game-guide-tab-btn:hover,
+.game-guide-tab-btn.active {
+  font-weight: bold;
+}
+
+/* 全域樣式 */
+body {
+  overflow-y: scroll;
+}
+
+/* Custom Button Styles for Game Guide - Unified Hover Effects */
+.btn-outline-orange {
+  color: #fd7e14;
+  border-color: #fd7e14;
+}
+
+.btn-outline-orange:hover,
+.btn-outline-orange:active,
+.btn-outline-orange.active {
+  color: #fff !important;
+  background-color: #fd7e14;
+  border-color: #fd7e14;
+}
+
+.btn-outline-purple {
+  color: #6f42c1;
+  border-color: #6f42c1;
+}
+
+.btn-outline-purple:hover,
+.btn-outline-purple:active,
+.btn-outline-purple.active {
+  color: #fff !important;
+  background-color: #6f42c1;
+  border-color: #6f42c1;
+}
+
+.btn-outline-green {
+  color: #198754;
+  border-color: #198754;
+}
+
+.btn-outline-green:hover,
+.btn-outline-green:active,
+.btn-outline-green.active {
+  color: #fff !important;
+  background-color: #198754;
+  border-color: #198754;
 }

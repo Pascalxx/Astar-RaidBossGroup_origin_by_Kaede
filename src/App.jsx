@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
-import ZakumGuide from './components/Zakum/ZakumGuide';
+import GameGuide from './components/Guide/GameGuide';
 import HomePage from './components/Home/HomePage';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [currentView, setCurrentView] = useState('home'); // 'home' | 'zakum'
+  const [currentView, setCurrentView] = useState('home'); // 'home' | 'guide'
 
   // 根據系統偏好或預設值初始化主題
   useEffect(() => {
@@ -20,7 +20,7 @@ function App() {
   };
 
   return (
-    <div className="bg-body" style={{ minHeight: '100vh' }}>
+    <div className="bg-body" style={{ minHeight: '100vh', paddingTop: '60px' }}>
       <Navbar
         toggleTheme={toggleTheme}
         isDarkMode={isDarkMode}
@@ -32,8 +32,8 @@ function App() {
         <HomePage />
       )}
 
-      {currentView === 'zakum' && (
-        <ZakumGuide onViewChange={setCurrentView} />
+      {currentView === 'guide' && (
+        <GameGuide onViewChange={setCurrentView} />
       )}
     </div>
   );
