@@ -53,7 +53,6 @@ Astar-RaidBossGroup_origin_by_Kaede/
 │   ├── components/         # React 元件
 │   │   ├── Guide/          # 遊戲攻略頁面元件
 │   │   ├── Home/           # 首頁相關元件 (列表, Modal)
-│   │   ├── Zakum/          # 殘暴炎魔攻略元件
 │   │   └── Navbar.jsx      # 導覽列
 │   ├── utils/              # 工具函式 (資料抓取, 職業顏色定義)
 │   ├── App.jsx             # 主應用程式入口
